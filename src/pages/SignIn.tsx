@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
-import { Eye, EyeOff, Mail, Lock } from 'lucide-react';
+import { Mail } from 'lucide-react';
 import toast from 'react-hot-toast';
 import { api } from '../utils/api';
 import { useAuth } from '../contexts/AuthContext';
@@ -45,7 +45,7 @@ const SignIn: React.FC = () => {
   const onSubmit = async (data: SignInForm) => {
     setIsLoading(true);
     try {
-      const response = await api.post('/auth/login', {
+      await api.post('/auth/login', {
         email: data.email
       });
 

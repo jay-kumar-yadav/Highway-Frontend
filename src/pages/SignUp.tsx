@@ -36,7 +36,7 @@ const SignUp: React.FC = () => {
   const onSubmit = async (data: SignUpForm) => {
     setIsLoading(true);
     try {
-      const response = await api.post('/auth/register', {
+      await api.post('/auth/register', {
         name: data.name,
         email: data.email,
         dateOfBirth: data.dateOfBirth || undefined
